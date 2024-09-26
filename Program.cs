@@ -1,33 +1,53 @@
-﻿// See https://aka.ms/new-console-template for more information
-LearningActivity31();
-LearningActivity32();
-LearningActivity33();
-LearningActivity34();
-LearningActivity35();
+﻿namespace MyApplication
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int opt = 0;
+            while (opt <= 5)
+            {
+                Console.Clear();
+                Console.WriteLine("1. Run Activity 3.1");
+                Console.WriteLine("2. Run Activity 3.2");
+                Console.WriteLine("3. Run Activity 3.3");
+                Console.WriteLine("4. Run Activity 3.4");
+                Console.WriteLine("5. Run Activity 3.5");
+                Console.WriteLine("6. Stop program");
+                Console.Write("Enter your option: ");
+                opt = int.Parse(Console.ReadLine());
+                Console.Clear();
 
-void LearningActivity31()
-{
-    Console.WriteLine("This is the function for Learning Activity 3.1!");
-}
-void LearningActivity32()
-{
-    Console.WriteLine("This is the function for Learning Activity 3.2!");
-}
-void LearningActivity33()
-{
-    Console.WriteLine("This is the function for Learning Activity 3.3!");
-}
+                switch (opt)
+                {
+                    case 1:
+                        LA31.Run();
+                        break;
 
-void LearningActivity34()
-{
-    int number;
-    bool success = int.TryParse(Console.ReadLine(), out number); //example code
-    Console.WriteLine("This is the function for Learning Activity 3.4!");
-}
+                    case 2:
+                        LA32.Run();
+                        break;
 
-void LearningActivity35()
-{
-    int[] highScores = { 1272700, 1271100, 1243000, 1218000, 1214300, 1210800, 1210400, 1206800, 1178400 };
-    Console.WriteLine("This is the function for Learning Activity 3.5!");
+                    case 3:
+                        LA33.Run();
+                        break;
+
+                    case 4:
+                        LA34.Run();
+                        break;
+
+                    case 5:
+                        LA35.Run();
+                        break;
+
+                    default:
+                        opt = 6;
+                        Console.WriteLine("Thanks for playing game");
+                        break;
+                }
+                Console.ReadLine();
+            }
+        }
+    }
 }
 
